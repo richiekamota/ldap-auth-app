@@ -64,9 +64,10 @@ return [
           'driver' => 'ldap',
           'model' => LdapRecord\Models\OpenLDAP\User::class,
           'rules' => [],
+          'create' => false,
           'database' => [
                 'model' => App\Models\User::class,
-                'sync_passwords' => true,
+                'sync_passwords' => false,
                 'sync_attributes' => [
                  'name' => 'cn',        // LDAP attribute for name
                  'email' => 'mail',     // LDAP attribute for email
@@ -105,7 +106,7 @@ return [
             'throttle' => 60,
         ],
     ],
-
+     
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout

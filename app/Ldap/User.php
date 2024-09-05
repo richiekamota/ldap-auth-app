@@ -20,21 +20,21 @@ class User extends Model implements Authenticatable,  LdapAuthenticatable
     return $this->guidKey;
   }
 
-//   public function getLdapDomainColumn(): string
-//   {
-//     return 'ldap_host';
-//   }
+  public function getLdapDomainColumn(): string
+  {
+    return 'ldap_host';
+  }
 
-//   public function getLdapDomain(): ?string
-//   {
-//     return $this->ldap_host;
-//   }
+  public function getLdapDomain(): ?string
+  {
+    return $this->ldap_host;
+  }
 
-//   public function setLdapDomain(?string $domain): void
-//   {
-//     $this->ldap_host = $domain;
-//     $this->save();
-//   }
+  public function setLdapDomain(?string $domain): void
+  {
+    $this->ldap_host = $domain;
+    $this->save();
+  }
 
   public function getLdapGuidColumn(): string
   {

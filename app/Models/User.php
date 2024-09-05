@@ -23,6 +23,7 @@ class User extends Authenticatable implements LdapAuthenticatable
     'name',
     'email',
     'guid',
+    'domain',
     'password',
     'org',
     'org_unit'
@@ -64,5 +65,20 @@ class User extends Authenticatable implements LdapAuthenticatable
   public function setLdapGuid(?string $guid): void
   {
     $this->guid = $guid;
+  }
+
+  public function getLdapDomainColumn(): string
+  {
+    return 'ldap_domain';
+  }
+
+  public function getLdapDomain(): ?string
+  {
+    return $this->domain;
+  }
+
+  public function setLdapDomain(?string $domain): void
+  {
+    $this->domain = $domain;
   }
 }
